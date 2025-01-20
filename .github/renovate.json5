@@ -1,49 +1,67 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":automergeBranch",
-    ":dependencyDashboard",
-    ":disableRateLimiting",
-    ":semanticCommits",
-    ":separatePatchReleases"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    ':automergeBranch',
+    ':dependencyDashboard',
+    ':disableRateLimiting',
+    ':semanticCommits',
+    ':separatePatchReleases',
   ],
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "suppressNotifications": [
-    "prEditedNotification",
-    "prIgnoreNotification"
+  dependencyDashboard: true,
+  dependencyDashboardTitle: 'Renovate Dashboard 🤖',
+  suppressNotifications: [
+    'prEditedNotification',
+    'prIgnoreNotification',
   ],
-  "schedule": ["every weekend", "before 5am on every weekday"],
-  "ignorePaths": ["**/*.sops.*"],
-  "packageRules": [
-    {
-      "description": "Automerge minor and patch updates",
-      "automerge": true,
-      "automergeType": "branch",
-      "matchUpdateTypes": ["minor", "patch"],
-      "ignoreTests": true
-    },
-    {
-      "description": "Add labels to major updates",
-      "matchUpdateTypes": ["major"],
-      "labels": ["type/major"]
-    },
-    {
-      "description": "Add labels for docker updates",
-      "matchDatasources": ["docker"],
-      "addLabels": ["renovate/container"]
-    }
+  schedule: [
+    'every weekend',
+    'before 5am every weekday',
   ],
-  "customManagers": [
+  ignorePaths: [
+    '**/*.sops.*',
+  ],
+  packageRules: [
     {
-      "customType": "regex",
-      "description": "Process YAML custom dependencies",
-      "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"],
-      "matchStrings": [
-        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+(:\\s|=)(&\\S+\\s)?(?<currentValue>\\S+)"
+      description: 'Automerge minor and patch updates',
+      automerge: true,
+      automergeType: 'branch',
+      matchUpdateTypes: [
+        'minor',
+        'patch',
       ],
-      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
-    }
-  ]
+      ignoreTests: true,
+    },
+    {
+      description: 'Add labels to major updates',
+      matchUpdateTypes: [
+        'major',
+      ],
+      labels: [
+        'type/major',
+      ],
+    },
+    {
+      description: 'Add labels for docker updates',
+      matchDatasources: [
+        'docker',
+      ],
+      addLabels: [
+        'renovate/container',
+      ],
+    },
+  ],
+  customManagers: [
+    {
+      customType: 'regex',
+      description: 'Process YAML custom dependencies',
+      fileMatch: [
+        '(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$',
+      ],
+      matchStrings: [
+        'datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+(:\\s|=)(&\\S+\\s)?(?<currentValue>\\S+)',
+      ],
+      datasourceTemplate: '{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}',
+    },
+  ],
 }
