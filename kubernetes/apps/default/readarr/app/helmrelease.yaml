@@ -93,8 +93,6 @@ spec:
       config:
         enabled: true
         existingClaim: *app
-        globalMounts:
-          - path: /config
       tmp:
         type: emptyDir
       media:
