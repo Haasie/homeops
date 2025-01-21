@@ -15,4 +15,4 @@ resources:
 #  - ./readarr/ks.yaml
 #  - ./recyclarr/ks.yaml
 #  - ./calibre/ks.yaml
-#  - ./calibre-web/ks.yaml
+  - ./calibre-web/ks.yaml
