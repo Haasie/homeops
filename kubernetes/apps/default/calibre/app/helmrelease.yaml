@@ -24,7 +24,7 @@ spec:
       retries: 3
   values:
     controllers:
-      calibre-web:
+      calibre:
         annotations:
           reloader.stakater.com/auto: "true"
         containers:
@@ -76,9 +76,9 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: calibre-web-config
+        existingClaim: calibre-config
         advancedMounts:
-          calibre-web:
+          calibre:
             app:
               - path: /config
 
