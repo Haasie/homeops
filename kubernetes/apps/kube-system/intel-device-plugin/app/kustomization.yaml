@@ -6,4 +6,4 @@ namespace: kube-system
 resources:
   - ./exporter
   - ./gpu
-  - ./operator
+
