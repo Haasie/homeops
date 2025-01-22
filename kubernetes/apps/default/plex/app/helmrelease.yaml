@@ -72,8 +72,8 @@ spec:
         runAsGroup: 568
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
-      nodeSelector:
-        intel.feature.node.kubernetes.io/gpu: "true"
+#      nodeSelector:
+#        intel.feature.node.kubernetes.io/gpu: "true"
     service:
       app:
         controller: plex
