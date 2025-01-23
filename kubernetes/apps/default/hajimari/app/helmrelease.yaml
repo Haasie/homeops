@@ -70,8 +70,8 @@ spec:
               url: https://read.readwise.io
         - group: Kubernetes
           bookmarks:
-            - name: Haasie/Onenodethree
-              url: "https://github.com/Haasie/onenodethree"
+            - name: Haasie/homeops
+              url: "https://github.com/Haasie/homeops"
             - name: k8s-at-home-search
               url: "https://whazor.github.io/k8s-at-home-search/"
         - group: Shopping
@@ -92,6 +92,8 @@ spec:
               url: https://shmoogle.world/
             - name: OSINT Resources
               url: https://start.me/p/7kYgk2/rae-baker-deep-dive-osint
+            - name: Pushover
+              url: https://pushover.net/
         - group: Artificial Intelligence
           bookmarks:
             - name: Bard
