@@ -26,8 +26,6 @@ nodes:
   - hostname: "talosone"
     ipAddress: "192.168.1.4"
     installDisk: "/dev/sdb"
-    machineSpec:
-      secureboot: false
     talosImageURL: factory.talos.dev/installer/249d9135de54962744e917cfe654117000cba369f9152fbab9d055a00aa3664f
     controlPlane: true
     networkInterfaces:
