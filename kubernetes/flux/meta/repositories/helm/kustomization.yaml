@@ -16,3 +16,7 @@ resources:
   - ./prometheus-community.yaml
   - ./spegel.yaml
   - ./stakater.yaml
+  - ./intel.yaml
+  - ./hajimari.yaml
+  - ./csi-driver-nfs.yaml
+  - ./node-feature-discovery.yaml

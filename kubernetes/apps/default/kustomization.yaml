@@ -1,16 +1,19 @@
 ---
-# yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./echo-server/ks.yaml
-components:
-  - ../../flux/components/namespace
-patches:
-  - # Add the name to the namespace
-    patch: |
-      - op: add
-        path: /metadata/name
-        value: default
-    target:
-      kind: Namespace
+  - ./namespace.yaml
+  - ./hajimari/ks.yaml
+  - ./overseerr/ks.yaml
+  - ./plex/ks.yaml
+  - ./sonarr/ks.yaml
+  - ./radarr/ks.yaml
+  - ./sabnzbd/ks.yaml
+  - ./tautulli/ks.yaml
+  - ./bazarr/ks.yaml
+#  - ./lidarr/ks.yaml
+  - ./readarr/ks.yaml
+#  - ./recyclarr/ks.yaml
+#  - ./calibre/ks.yaml
+  - ./calibre-web/ks.yaml
+  - ./freshrss/ks.yaml
